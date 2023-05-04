@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contact_form_layout.css">
+</head>
+<body>
+    <form>
+        <h1 id="Container">Contact Form</h1>
+        <p>  First_Name:<input type="text" placeholder="Enter Your Full Name" name="Name" id="Name"><br><br>
+        Middle_Name<input type="text" placeholder="Enter your middle name" name="Middle_name"><br><br>
+        Last_Name<input type="text" placeholder="Enter your Last Name" name="Last_name">
+        </p>
+        <p>
+            Email:<input type="text" placeholder=" Enter your email to contact" name="Email" id="email">
+        </p>
+        <p>
+           Phone_Number:
+           <select>
+            <option value="">Select the phone type</option>
+
+            <option value="mobile">Mobile</option>
+            <option value="landline"> Landline</option>
+             <option value="Phone"> Phone</option>
+             <option value="cell"> Cell</option>
+           </select>
+        </p>
+    
+<p> Address:<textarea input type="text" rows="40" cols="40">
+    </textarea>
+
+</p>
+<fieldset>
+    <legend>Gender</legend>
+    <p>Male: <input type="radio" name="gender" id="gender">
+    Female:<input type="radio" name="gender" id="gender">
+    Other:<input type="radio" name="gender" id="gender"><input type="text" placeholder="Enter  the other gender">
+    </p>
+</fieldset>
+<p>
+    Pincode:<input type="number" name="number" id="number">
+
+</p>
+<p>
+    Data_of_Birth<input type="date" name="date" id="date">
+</p>
+   <input type="submit" value="Submit Form">
+
+    </form>
+</body>
+</html>
