@@ -1,70 +1,59 @@
 
 
-import TextForm from './Textform';
-import Navbar from './Navbar';
-// import About from './About';
-import React, { useState } from "react";
-import Alert from './Alert';
 
-export default function App() {
-  const[mode,setMode]=useState('light');
-  const[alert,setAlert]=useState("hey this is the alert function ");
-  const showAlert=(message,type)=>{
-    setAlert({
-  msg:message,
-  type:type
-  })
+
+
+import './App.css';
+import Navbar from './Components/Navbar';
+import Textform from'./Components/Textform';
+import Alert from './Components/Alert';
+import React, { useState } from 'react'; 
+
+
+function App() {
  
-}
-const showAlert2=(message,type)=>{
-  setAlert({
-msg:message,
-type:type
-})
-}
-
-
-
-
-  const toggleMode=()=>{
-    if(mode==='light'){
-      setMode('dark');
-      document.body.style.backgroundColor='grey';
-      showAlert("Dark mode has been enabled","success")
-
-    }
-    else{
-      setMode('light');
-      document.body.style.backgroundColor='white';
-      showAlert("light mode has been enabled","success")
-    }
+const[alert,setalert]=useState("light mode is  enabled ");
+ const togglemode=()=>{  
+  if(mode==='light'){
+    setMode('dark');
+    settxt('enable light mode');
+    document.body.style.backgroundColor='grey';
+  setalert("Dark mode enabled ");
+  document.title='Textutils-Dark mode';
+  setInterval(()=>{
+  document.title='Textutils  is an amazing mode';
+  },2000);
+  
+ 
+  }
+  
+  else{
+    setMode('light');
+    settxt('enable dark mode');
+    document.body.style.backgroundColor='white';
+ setalert("light mode enabled");
+ document.title="Textutils-Light Mode";
   }
 
+ }
+
+ const [txt,settxt]=useState('Enable Dark mode');
+
+  const[mode,setMode]=useState('light');//whether dark mode is enabled or not
+
   return (
-    
-    <>  
- 
-    <Navbar title="textutils" mode={mode} togglemode={toggleMode}/>
-        <Alert alert={alert}/>
-        <div className="container my-3">
-          
-    
-            {/* <About  showalert2={showAlert2}/> */}
-      
-        
-          <TextForm showAlert={showAlert} heading="enter the text to analyze below"/>
-          
-       
-      
-          
-        
-        </div>
    
-      
-      </>
-       
-      
-      
-    
+    <>
+ 
+   <Navbar title="my Textutils" about="About Textutils " mode={mode} togglemode={togglemode} txt={txt} />
+    <Alert  alert={alert}/>
+  <Textform heading="Enter the text to analyze" mode={mode}/>
+   
+
+     
+
+  </>
   );
 }
+
+export default App;
